@@ -228,6 +228,8 @@ def parse_swap_exercise(response_text: str) -> Optional[Exercise]:
 
 def _call_llm(prompt: str) -> str:
     api_key = os.getenv("GROQ_API_KEY")
+    if api_key is None:
+        raise ValueError("GROQ_API_KEY not found in environment variables")
     
     client = Groq()
     model = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
