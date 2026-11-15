@@ -1,7 +1,7 @@
 # 💪 AI Fitness Plan Generator
 
 A Streamlit application that generates personalised weekly workout plans using
-Google Gemini.
+Groq.
 
 ## Features
 
@@ -21,12 +21,16 @@ Google Gemini.
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Run the app
+# 2. Create your local environment file
+copy .env.example .env
+
+# 3. Run the app
 streamlit run app.py
 ```
 
-Enter your **Gemini API key** in the sidebar
-(get one free at <https://aistudio.google.com/apikey>).
+Add your Groq API key to `.env` as `GROQ_API_KEY` (get one at
+<https://console.groq.com/keys>). `.env` is ignored by Git; do not commit your
+API key. `GROQ_MODEL` is optional and defaults to `openai/gpt-oss-120b`.
 
 ## Project Structure
 
